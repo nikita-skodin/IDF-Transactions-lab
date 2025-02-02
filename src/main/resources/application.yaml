@@ -1,3 +1,26 @@
+server:
+  port: ${SPRING_APPLICATION_PORT}
+
 spring:
   application:
     name: IDF-Transactions-lab
+  config:
+    import: optional:file:.env-local[.properties]
+  datasource:
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL}
+  jpa:
+    show-sql: ${SHOW_SQL}
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    web: ${LOGGING_WEB}
