@@ -1,1 +1,3 @@
-spring.application.name=IDF-Transactions-lab
+spring:
+  application:
+    name: IDF-Transactions-lab
